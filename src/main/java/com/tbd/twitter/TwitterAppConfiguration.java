@@ -28,8 +28,11 @@ public class TwitterAppConfiguration {
 				.setOAuthConsumerKey(properties.getTwitter().getConsumerKey())
 				.setOAuthConsumerSecret(properties.getTwitter().getConsumerSecret())
 				.setOAuthAccessToken(properties.getTwitter().getAccessToken())
-				.setOAuthAccessTokenSecret(properties.getTwitter().getAccessTokenSecret());
+				.setOAuthAccessTokenSecret(properties.getTwitter().getAccessTokenSecret())
+                .setDebugEnabled(true)
+                .setTweetModeExtended(true);
 		return new TwitterStreamFactory(configurationBuilder.build());
+
     }
     @Bean
     @ConditionalOnMissingBean
